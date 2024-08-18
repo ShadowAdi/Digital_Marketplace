@@ -50,6 +50,6 @@ export async function GET() {
   return NextResponse.redirect(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://digital-marketplace-one.vercel.app"
+      : "https://digital-marketplace-rho.vercel.app"
   );
 }

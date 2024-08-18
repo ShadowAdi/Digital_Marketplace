@@ -48,11 +48,11 @@ export async function BuyProduct(formData: FormData) {
     success_url:
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000/payments/success"
-        : "https://digital-marketplace-one.vercel.app/payments/success",
+        : "https://digital-marketplace-rho.vercel.app/payments/success",
     cancel_url:
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000/payments/cancel"
-        : "https://digital-marketplace-one.vercel.app/payments/cancel",
+        : "https://digital-marketplace-rho.vercel.app/payments/cancel",
   });
 
   return redirect(session.url as string);
@@ -79,11 +79,11 @@ export async function CreateStripeAccountLink() {
     refresh_url:
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000/billing"
-        : "https://digital-marketplace-one.vercel.app/billing",
+        : "https://digital-marketplace-rho.vercel.app/billing",
     return_url:
       process.env.NODE_ENV === "development"
         ? `http://localhost:3000/return/${data?.connectedAccountId}`
-        : `https://digital-marketplace-one.vercel.app/return/${data?.connectedAccountId}`,
+        : `https://digital-marketplace-rho.vercel.app/return/${data?.connectedAccountId}`,
     type: "account_onboarding",
   });
 
