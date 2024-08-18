@@ -26,7 +26,6 @@ const MobileMenu = () => {
         <div className="mt-5 flex px-2 space-y-1 flex-col ">
           {NavbarLinksArray.map((link) => {
             return (
-              <>
                 <Link
                   href={link.href}
                   key={link.id}
@@ -39,7 +38,6 @@ const MobileMenu = () => {
                 >
                   {link.name}
                 </Link>
-              </>
             );
           })}
         </div>

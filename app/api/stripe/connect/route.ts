@@ -14,7 +14,6 @@ export async function POST(req: Request) {
       signature,
       process.env.STRIPE_CONNECT_WEBHOOK_SECRET as string
     );
-    console.log("Event constructed:", event);
   } catch (error: unknown) {
     console.error("Webhook error:", error);
     return new Response("webhook error", { status: 400 });
@@ -23,7 +22,6 @@ export async function POST(req: Request) {
   switch (event.type) {
     case "account.updated": {
       const account = event.data.object;
-      console.log("Account updated:", account);
 
       try {
         const data = await prisma.user.update({
@@ -38,14 +36,13 @@ export async function POST(req: Request) {
                 : true,
           },
         });
-        console.log("Database updated:", data);
       } catch (error: unknown) {
         console.error("Database error:", error);
       }
       break;
     }
     default: {
-      console.log("Unhandled event:", event.type);
+      console.log("Unhandled event:");
     }
   }
 

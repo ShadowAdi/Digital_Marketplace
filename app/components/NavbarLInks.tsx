@@ -18,7 +18,6 @@ const NavbarLInks = () => {
     <div className="hidden md:flex justify-center items-center col-span-6 gap-x-3 ">
       {NavbarLinksArray.map((link, i) => {
         return (
-          <>
             <Link
               href={link.href}
               key={i}
@@ -31,7 +30,7 @@ const NavbarLInks = () => {
             >
               {link.name}
             </Link>
-          </>
+          
         );
       })}
     </div>

@@ -42,7 +42,6 @@ const NewestProduct = async () => {
       >
         {data.map((product,i) => {
           return (
-            <>
               <ProductCard
                 images={product.images}
                 key={i}
@@ -51,7 +50,6 @@ const NewestProduct = async () => {
                 price={product.price}
                 shortDescription={product.shortDescription}
               />
-            </>
           );
         })}
       </div>
